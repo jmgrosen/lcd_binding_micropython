@@ -1,7 +1,7 @@
 #include "softspi.h"
 #include "spi_panel.h"
 
-#include "extmod/machine_spi.h"
+#include "extmod/modmachine.h"
 #include "py/runtime.h"
 
 #define DEBUG_printf(...) // mp_printf(&mp_plat_print, __VA_ARGS__);

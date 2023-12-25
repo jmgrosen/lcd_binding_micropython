@@ -76,6 +76,7 @@ LIST(APPEND INC ${GC9A01_DRIVER_INC})
 
 if (CONFIG_IDF_TARGET_ESP32 OR CONFIG_IDF_TARGET_ESP32S3)
     target_compile_definitions(usermod_lcd INTERFACE USE_ESP_LCD=1)
+    # LIST(APPEND INC $ENV{IDF_PATH}/components/esp_lcd/include)
     if (CONFIG_IDF_TARGET_ESP32S3)
         LIST(APPEND SRC ${DPI_BUS_SRC})
         LIST(APPEND INC ${DPI_BUS_INC})
@@ -84,7 +85,7 @@ if (CONFIG_IDF_TARGET_ESP32 OR CONFIG_IDF_TARGET_ESP32S3)
 endif()
 
 target_sources(usermod_lcd INTERFACE ${SRC})
-target_compile_options(usermod_lcd INTERFACE "-g")
+target_compile_options(usermod_lcd INTERFACE "-g" "-Wno-unused-value")
 # Add the current directory as an include directory.
 target_include_directories(usermod_lcd INTERFACE ${INC})
 

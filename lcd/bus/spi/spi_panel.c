@@ -2,7 +2,7 @@
 #include "lcd_panel.h"
 
 #include "modmachine.h"
-#include "extmod/machine_spi.h"
+#include "extmod/modmachine.h"
 #include "esp32.h"
 #include "softspi.h"
 
